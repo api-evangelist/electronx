@@ -1,0 +1,46 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.electronx.com/fix-guide
+note: >-
+  ElectronX exposes no HTTP/REST API and publishes no OpenAPI, so this profile is
+  captured from the FIX API guide rather than derived from securitySchemes. Access
+  is via FIX sessions authenticated by a provisioned SenderCompID over SSL/TLS.
+summary:
+  types:
+  - fix-session
+  - mutualTLS
+  transport: FIXT.1.1 (session) + FIX 5.0 SP2 (application)
+schemes:
+- name: fix-sendercompid
+  type: fix-session
+  description: >-
+    Each FIX session authenticates with a unique SenderCompID assigned by
+    ElectronX during provisioning, combined with SSL/TLS encryption. The Logon
+    (35=A) message carries the FIX version, heartbeat interval (30s), and target
+    (EXI). SenderSubID (Tag 50) must NOT be sent in Logon (rejects the session)
+    but IS required on all order-related messages for audit trail.
+  sources:
+  - https://docs.electronx.com/fix-guide
+- name: ssl-tls
+  type: mutualTLS
+  description: >-
+    All FIX sessions (Order Entry, Market Data, Drop Copy) run over SSL/TLS.
+    Firm-specific gateway hostnames and ports are delivered privately in a FIX
+    Connectivity Details document during provisioning, not published publicly.
+  sources:
+  - https://docs.electronx.com/fix-guide
+sendercompid_conventions:
+- session: Order Entry
+  format: D-{TRADING_DESK_ID}-OE{nn}
+  example: D-POLARIS-01-OE01
+- session: Market Data
+  format: '{CUSTOMER_LABEL}-MD{nn}'
+  example: POLARIS-MD01
+- session: Drop Copy
+  format: CM-{CLEARING_MEMBER_ID}-DC{nn}
+  example: CM-POLARIS-DC01
+platform_access:
+  docs: https://docs.electronx.com/platform-access
+  note: >-
+    GUI platform access uses first-login credentials with multi-factor
+    authentication (MFA). API (FIX) access is provisioned separately.
