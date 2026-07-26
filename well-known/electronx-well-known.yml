@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: none
+source: live probes of electronx.com + docs.electronx.com /.well-known/*
+note: >-
+  No real .well-known discovery documents are published. docs.electronx.com
+  returns HTTP 200 for every /.well-known/* path but serves the HTML
+  single-page-app shell (content-type text/html), i.e. a soft 404, not a real
+  document. www.electronx.com returns hard 404s. No files were saved.
+hosts:
+- host: https://www.electronx.com
+- host: https://docs.electronx.com
+documents:
+- path: /.well-known/security.txt
+  status: soft-404
+  file: null
+- path: /.well-known/openid-configuration
+  status: soft-404
+  file: null
+- path: /.well-known/oauth-authorization-server
+  status: soft-404
+  file: null
+- path: /.well-known/api-catalog
+  status: soft-404
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: soft-404
+  file: null

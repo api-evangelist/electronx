@@ -1,22 +1,110 @@
 aid: electronx
 name: Electronx
-description: Electronx is a company surfaced as a portfolio company of dcvc and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  ElectronX is a CFTC-regulated financial exchange (Designated Contract Market)
+  and clearinghouse (Derivatives Clearing Organization) operating the first
+  U.S.-regulated, direct-access power derivatives market. It offers 1MW hourly
+  bounded futures and binary options that let energy market participants hedge
+  intraday electricity price volatility across ISOs including ERCOT, PJM, MISO,
+  and CAISO. Traders connect through a browser-based platform or programmatically
+  via a FIX API providing order entry, market data, and drop copy sessions.
+  ElectronX is backed by DCVC and has raised more than $55M across seed and
+  Series A rounds to democratize access to electricity risk-management tools for
+  battery storage operators, distributed energy resource aggregators, trading
+  firms, and commercial power consumers.
 url: https://raw.githubusercontent.com/api-evangelist/electronx/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Requires approval
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://docs.electronx.com/assets/og/electronx-logo.jpg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - dcvc
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-public-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Energy
+- Electricity
+- Power Derivatives
+- Trading
+- Exchange
+- Financial Services
+- FIX API
+- Market Data
+- Futures
+- Options
+- CFTC
+apis:
+- name: ElectronX FIX API
+  description: >-
+    The ElectronX FIX API provides programmatic access to the exchange through
+    three session types: Order Entry (submit, modify, cancel orders and receive
+    execution reports), Market Data (real-time prices and order book depth), and
+    Drop Copy (receive-only consolidated firm execution activity). Sessions use
+    FIXT.1.1 for the transport layer and FIX 5.0 SP2 for the application layer,
+    authenticated via SenderCompID over SSL/TLS.
+  humanURL: https://docs.electronx.com/fix-guide
+  properties:
+  - type: Documentation
+    url: https://docs.electronx.com/fix-guide
+  - type: GettingStarted
+    url: https://docs.electronx.com/getting-started
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/electronx-domain-security.yml
+- type: Website
+  url: https://www.electronx.com/
+- type: DeveloperPortal
+  url: https://docs.electronx.com/
+- type: Documentation
+  url: https://docs.electronx.com/
+- type: APIReference
+  url: https://docs.electronx.com/fix-guide
+- type: GettingStarted
+  url: https://docs.electronx.com/getting-started
+- type: Blog
+  url: https://www.electronx.com/news-insights-collections
+- type: Support
+  url: https://www.electronx.com/contact
+- type: TermsOfService
+  url: https://www.electronx.com/terms
+- type: PrivacyPolicy
+  url: https://www.electronx.com/privacy
+- type: Compliance
+  url: https://www.electronx.com/regulatory
+- type: LLMsTxt
+  url: llms/electronx-llms.txt
+- type: Authentication
+  url: authentication/electronx-authentication.yml
+- type: Conventions
+  url: conventions/electronx-conventions.yml
+- type: Conformance
+  url: conformance/electronx-conformance.yml
+- type: Lifecycle
+  url: lifecycle/electronx-lifecycle.yml
+- type: ChangeLog
+  url: changelog/electronx-changelog.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

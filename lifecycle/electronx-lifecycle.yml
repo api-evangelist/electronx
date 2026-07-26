@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: searched
+source:
+- https://docs.electronx.com/product-releases
+- https://docs.electronx.com/fix-guide
+versioning:
+  scheme: dated-product-releases
+  fix_application_layer: FIX 5.0 SP2
+  fix_session_layer: FIXT.1.1
+  docs: https://docs.electronx.com/product-releases
+deprecation:
+  policy_url: null
+  note: No published deprecation/sunset policy found.
+sla:
+  url: null
+  note: No published SLA / uptime target found.
+status_page:
+  url: null
+  note: >-
+    No status page found. status.electronx.com does not resolve;
+    electronx.statuspage.io is unclaimed (redirects to statuspage.io home).
+session_lifecycle:
+  sequence_number_reset: Weekly, Sundays 06:15 UTC, reset to 1 (ResetSeqNumFlag=Y)
+  cancel_on_disconnect: DAY orders auto-cancel on unexpected disconnect; GTC persist
+deprecated_operations: []

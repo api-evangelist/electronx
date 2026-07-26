@@ -1,0 +1,26 @@
+# ElectronX Education Hub
+
+> Learn to trade hourly power on ElectronX: onboarding, contracts, settlement, the FIX API, and market research.
+
+## EXI 101 — Onboarding & Platform
+- [Getting Started](https://docs.electronx.com/getting-started.md): Open a trading account on ElectronX: KYC, Participant and Clearing Member agreements, funding, and platform access for hourly power markets.
+- [Required Documentation](https://docs.electronx.com/required-docs.md): The documentation ElectronX requires to onboard: Phase 1 form, organizational documents, Form W-9, Certificate of Good Standing, and UBO details.
+- [Account Structure & Roles](https://docs.electronx.com/account-structure.md): How ElectronX accounts are organized — Participants, Clearing Members, trading and collateral accounts, desks, and authorized user roles.
+- [Funding & Withdrawals](https://docs.electronx.com/funding.md): Fund and withdraw on ElectronX: the $25,000 minimum capitalization, wire requirements, matching bank-account names, and collateral accounts.
+- [Platform Access](https://docs.electronx.com/platform-access.md): Access the ElectronX trading platform — first login, multi-factor authentication setup, credentials, and GUI vs. API access.
+- [FAQ: Onboarding](https://docs.electronx.com/faq-onboarding.md): Answers to common ElectronX onboarding questions: deposits, funding timing, US Agent, UBOs, entity names, MFA, accounts, and support contacts.
+- [Navigating the Platform](https://docs.electronx.com/platform-overview.md): Navigate the ElectronX trading platform — widgets, location and product selectors, order book, price chart, heat map, and layout controls.
+- [Placing Your First Order](https://docs.electronx.com/placing-orders.md): Place your first order on ElectronX: choosing a contract and hour, order entry, collateral requirements, and confirming a fill.
+- [Order Types & Time in Force](https://docs.electronx.com/order-types.md): Order types and time-in-force on ElectronX — limit orders, Good-Til-Date (GTD), cancel/replace, and how each behaves on the exchange.
+- [How Bounded Futures Work](https://docs.electronx.com/bounded-futures.md): How ElectronX bounded futures work: 1MW hourly power contracts with defined upper and lower bounds, collateral, and cash settlement to ISO prices.
+- [FIX API Guide](https://docs.electronx.com/fix-guide.md): The ElectronX FIX API: market data, order entry, and drop copy sessions, mass cancel, mass quote protection, and message specifications.
+- [How Binary Options Work](https://docs.electronx.com/binary-options.md): How ElectronX binary options work — hourly power contracts that settle to a fixed payout based on whether an ISO price crosses a strike.
+- [Contract Expiry & Settlement](https://docs.electronx.com/expiry-settlement.md): How ElectronX contracts expire and settle to ISO real-time prices (ERCOT SPP, PJM/MISO LMP, CAISO FMM), including timing and payout mechanics.
+- [Collateral Guide](https://docs.electronx.com/collateral.md): The ElectronX collateral model: Available to Trade vs. Committed Collateral, how orders reserve funds, margin, and settlement flows.
+
+## Reference
+- [Glossary of Terms](https://docs.electronx.com/glossary.md): A glossary of ElectronX and power-market terms — DCM, DCO, ISO, ERCOT, PJM, MISO, CAISO, participants, orders, collateral, and fees.
+- [Product Specifications Index](https://docs.electronx.com/product-specs.md): ElectronX product specifications — bounded futures and binary options across ERCOT, PJM, MISO, and CAISO, with contract sizes and settlement.
+
+## Updates
+- [Product Releases](https://docs.electronx.com/product-releases.md): New products, platform capabilities, and API features as they go live.

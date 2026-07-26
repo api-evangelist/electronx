@@ -1,0 +1,64 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.electronx.com/fix-guide
+note: >-
+  Cross-cutting protocol semantics for the ElectronX FIX API. This is a FIX
+  exchange, not an HTTP/REST API, so conventions are expressed in FIX terms
+  (sessions, sequence numbers, order identity) rather than HTTP headers/pagination.
+protocol:
+  session_layer: FIXT.1.1
+  application_layer: FIX 5.0 SP2
+  sessions:
+  - Order Entry
+  - Market Data
+  - Drop Copy
+authentication:
+  summary: SenderCompID + SSL/TLS per session; see authentication/electronx-authentication.yml
+  ref: authentication/electronx-authentication.yml
+session_management:
+  heartbeat_interval_seconds: 30
+  sequence_numbers:
+    reset: weekly
+    when: Sundays 06:15 UTC
+    reset_to: 1
+    flag: ResetSeqNumFlag=Y
+  session_messages:
+  - Logon (35=A)
+  - Logout (35=5)
+  - Heartbeat (35=0)
+  - ResendRequest (35=2)
+order_identity:
+  client_order_id: ClOrdID
+  note: >-
+    Orders are identified by a client-assigned ClOrdID; OrderCancelRequest (35=F)
+    and OrderCancelReplaceRequest (35=G) reference the original order. ClOrdLinkID
+    can group related orders (used by mass cancel filtering). FIX ClOrdID is an
+    order-identity convention, not an HTTP idempotency-key replay contract.
+cancel_policies:
+  cancel_on_disconnect:
+    description: DAY orders auto-cancel if a session drops unexpectedly; GTC orders persist.
+  cancel_on_logout:
+    description: Same behavior as Cancel on Disconnect when sending a clean Logout.
+mass_operations:
+  mass_cancel:
+    message: OrderMassCancelRequest
+    report: OrderMassCancelReport
+    filters:
+    - instrument
+    - account
+    - account + ClOrdLinkID
+    - entire FIX session
+  mass_quote_protection:
+    description: >-
+      Auto-cancels an account's remaining resting orders when executions reach a
+      configured quantity within a rolling time window.
+error_semantics:
+  order_rejection: ExecutionReport (35=8) carries fills, confirmations, cancellations, and rejections.
+  ref: errors/ (no separate error catalog published; rejections surface on ExecutionReport)
+versioning:
+  ref: changelog/electronx-changelog.yml
+  scheme: dated product releases
+connectivity:
+  note: >-
+    Gateway hostnames/ports are firm-specific and delivered privately in a FIX
+    Connectivity Details document during provisioning; not published publicly.

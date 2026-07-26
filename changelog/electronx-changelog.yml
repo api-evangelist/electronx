@@ -1,0 +1,67 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.electronx.com/product-releases
+scheme: dated
+note: >-
+  ElectronX publishes a dated "Product Releases" log covering new products,
+  platform capabilities, and API features. Newest first; recent window captured.
+entries:
+- date: '2026-06-18'
+  title: MISO and CAISO hourly contracts are now live
+  type: addition
+  highlights: >-
+    1MW hourly bounded futures and binary options now trading on MISO and CAISO,
+    joining ERCOT and PJM.
+- date: '2026-05-20'
+  title: Location Selector & platform enhancements
+  type: addition
+  highlights: >-
+    New Master Selector syncs location filtering across widgets with ISO-level
+    group controls; settlement/payout pricing on the Price Chart; order-entry
+    collateral calculator; pop-out widgets.
+- date: '2026-04-23'
+  title: Mass cancellation support is active
+  type: addition
+  api: true
+  highlights: >-
+    Cancel multiple open orders in a single FIX message via OrderMassCancelRequest,
+    filterable by instrument, account, account + ClOrdLinkID, or entire FIX
+    session; each request returns an OrderMassCancelReport.
+- date: '2026-04-18'
+  title: CSV bulk order upload
+  type: addition
+  highlights: >-
+    Stage and submit many orders at once from a CSV file to build a book across
+    multiple contracts and hours.
+- date: '2026-03-23'
+  title: Mass Quote Protection launched
+  type: addition
+  api: true
+  highlights: >-
+    Automatically cancels an account's remaining resting orders when executions
+    reach a configured quantity within a rolling time window; available for
+    API-based traders.
+- date: '2026-03-09'
+  title: Good-Til-Date orders now supported
+  type: addition
+  highlights: >-
+    GTD lets you set a specific expiration date/time for an order so it
+    auto-cancels on the exchange if not fully filled.
+- date: '2026-03-03'
+  title: Order notifications are live
+  type: addition
+  highlights: >-
+    Configurable real-time alerts for order-lifecycle and market-data events
+    (session highs/lows, price-threshold crosses, large trades/orders).
+- date: '2026-02-23'
+  title: Heat Map introduced
+  type: addition
+  highlights: >-
+    New Heat Map shows the top five most active product-and-instrument
+    combinations by order quantity.
+- date: '2026-02-19'
+  title: General GUI functionality update
+  type: addition
+  highlights: >-
+    Hub and product selectors on most widgets; multiple widget instances with
+    independent filters; new Vertical Order Book column.

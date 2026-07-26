@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: searched
+source:
+- https://docs.electronx.com/fix-guide
+- https://www.electronx.com/regulatory
+standards:
+- id: fix-5.0-sp2
+  conforms: true
+  evidence: FIX API application layer uses FIX v5.0 SP2 (per FIX API guide)
+- id: fixt-1.1
+  conforms: true
+  evidence: FIX session/transport layer uses FIXT.1.1 (per FIX API guide)
+- id: cftc-dcm
+  conforms: true
+  evidence: >-
+    ElectronX operates as a CFTC-regulated Designated Contract Market (DCM);
+    see /regulatory and glossary (DCM).
+- id: cftc-dco
+  conforms: true
+  evidence: >-
+    ElectronX operates a CFTC-regulated Derivatives Clearing Organization (DCO)
+    clearinghouse; see /regulatory and glossary (DCO).
+- id: oauth2
+  conforms: false
+  evidence: No HTTP/OAuth surface; access is FIX SenderCompID + SSL/TLS.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No HTTP/REST API; order rejections surface on FIX ExecutionReport (35=8).
+regulatory:
+  docs: https://www.electronx.com/regulatory
+  posture:
+  - CFTC-regulated Designated Contract Market (DCM)
+  - CFTC-regulated Derivatives Clearing Organization (DCO)
